@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
 
-//Started 10:30EST
-
 function App() {
   const questions = [
     {
@@ -60,19 +58,17 @@ function App() {
     if (width <= 100) {
       setWidth(width + 100 / questions.length);
     }
-    //if I can do setCurrentQuestion and setNYScore both in the same function call, why can't I also change width of the progress bar?
 
     console.log("CITY", city);
     if (city === "NY") {
-      setNYScore(nyScore + 1);
-      setCurrentQuestion(currentQuestion + 1);
+      let newScore = nyScore + 1
+      setNYScore(newScore);
     }
     if (city === "LA") {
-      setLAScore(laScore + 1);
-      setCurrentQuestion(currentQuestion + 1);
+      let newScore = laScore + 1
+      setLAScore(newScore);
     }
-    console.log("ny:", nyScore);
-    console.log("la:", laScore);
+    setCurrentQuestion(currentQuestion + 1);
   };
 
   const handleRestart = () => {
