@@ -57,22 +57,22 @@ function App() {
   let [width, setWidth] = useState(0);
 
   const handleAnswerClick = (e, city) => {
-    
-    if (width <=100) {setWidth(width + (100/questions.length))}
+    if (width <= 100) {
+      setWidth(width + 100 / questions.length);
+    }
     //if I can do setCurrentQuestion and setNYScore both in the same function call, why can't I also change width of the progress bar?
 
-    console.log('CITY', city)
+    console.log("CITY", city);
     if (city === "NY") {
       setNYScore(nyScore + 1);
-      setCurrentQuestion(currentQuestion + 1)
+      setCurrentQuestion(currentQuestion + 1);
     }
     if (city === "LA") {
       setLAScore(laScore + 1);
-      setCurrentQuestion(currentQuestion + 1)
+      setCurrentQuestion(currentQuestion + 1);
     }
-    console.log('ny:', nyScore)
-    console.log('la:', laScore)
-
+    console.log("ny:", nyScore);
+    console.log("la:", laScore);
   };
 
   const handleRestart = () => {
@@ -85,7 +85,7 @@ function App() {
   };
 
   return (
-    <div id='content'>
+    <div id="content">
       <header>
         <img
           id="header"
@@ -110,7 +110,9 @@ function App() {
               </div>
               <button onClick={() => handleRestart()}>Restart Quiz</button>
             </div>
-          ) : currentQuestion >= questions.length ? setShowScore(true) : (
+          ) : currentQuestion >= questions.length ? (
+            setShowScore(true)
+          ) : (
             <div>
               <h3 className="questionText">
                 {questions[currentQuestion].question}
@@ -122,12 +124,19 @@ function App() {
                     {answer.answerOption}
                   </button>
                 ))}
-               <div id="progressbar"><div style={{width}}>{width}%</div></div> 
+                <div id="progressbar">
+                  <div style={{ width }}>{width}%</div>
+                </div>
               </div>
             </div>
           )
         ) : (
-          <button onClick={() => setClickedStartQuiz(true)}>START QUIZ</button>
+          <div>
+            <h3>Did you escape from New York or Los Angeles?</h3>
+            <button onClick={() => setClickedStartQuiz(true)}>
+              START QUIZ
+            </button>
+          </div>
         )}
       </div>
       <footer className="footer">
