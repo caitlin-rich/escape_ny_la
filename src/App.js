@@ -136,7 +136,7 @@ function App() {
         )}
       </div>
       <footer className="footer">
-        <div>C. Rich 2021 - Ampush Web Dev Project</div>
+        <div>© C. Rich Oct 2021 - Take Home Project</div>
       </footer>
     </div>
   );
