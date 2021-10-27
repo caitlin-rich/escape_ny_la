@@ -63,13 +63,11 @@ function App() {
 
     console.log('CITY', city)
     if (city === "NY") {
-      let newScore = nyScore + 1;
-      setNYScore(newScore);
+      setNYScore(nyScore + 1);
       setCurrentQuestion(currentQuestion + 1)
     }
     if (city === "LA") {
-      let newScore = laScore + 1;
-      setLAScore(newScore);
+      setLAScore(laScore + 1);
       setCurrentQuestion(currentQuestion + 1)
     }
     console.log('ny:', nyScore)
@@ -87,7 +85,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div id='content'>
       <header>
         <img
           id="header"
@@ -133,7 +131,7 @@ function App() {
         )}
       </div>
       <footer className="footer">
-        <div className="content">C. Rich 2021 - Ampush Web Dev Project</div>
+        <div>C. Rich 2021 - Ampush Web Dev Project</div>
       </footer>
     </div>
   );

@@ -8,6 +8,12 @@ body {
 
 div{
   text-align: center;
+  flex-flow: column wrap;
+}
+
+
+#header {
+  width: 100%;
 }
 
 .content {
