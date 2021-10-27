@@ -60,9 +60,9 @@ function App() {
     //if (width <=100) {setWidth(width + (100/questions.length))}
     //if I can do setCurrentQuestion and setNYScore both in the same function call, why can't I also change width of the progress bar?
 
-    currentQuestion < questions.length
-      ? setCurrentQuestion(currentQuestion + 1)
-      : setShowScore(true);
+ 
+      setCurrentQuestion(currentQuestion + 1)
+
 
     if (city === "NY") {
       let newScore = nyScore++;
@@ -108,7 +108,7 @@ function App() {
               </div>
               <button onClick={() => handleRestart()}>Restart Quiz</button>
             </div>
-          ) : (
+          ) : currentQuestion >= questions.length ? setShowScore(true) : (
             <div>
               <h3 className="questionText">
                 {questions[currentQuestion].question}
