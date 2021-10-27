@@ -61,8 +61,8 @@ button:active {
   border-radius: 13px;
   border: 1px solid black;
   padding: 5px;
-  margin: 10px;
-  margin-left: 46%;
+  margin: auto;
+  margin-top: 2vh;
   width: 100px;
 }
 
