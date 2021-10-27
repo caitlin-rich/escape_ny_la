@@ -1,0 +1,64 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+}
+
+.content {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+.footer {
+  margin-top: 30vh;
+  display: flex;
+}
+
+.questionText {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.answerText {
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+button {
+  width: 500px;
+  height: 50px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 2px;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(255, 233, 237);
+  text-align: center;
+  transition: hover 0.2s;
+}
+
+button:hover{
+  background-color: rgb(255, 144, 164);
+}
+
+button:active {
+  background-color: rgb(255, 64, 99);
+  box-shadow: 2 1px #666;
+  transform: translateY(3px);
+}
+
+
+#progressbar {
+  border-radius: 13px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+  width: 30%;
+}
+
+#progressbar>div{
+  background-color: rgb(250, 101, 113);
+  height: 20px;
+  border-radius: 10px;
+}
+
