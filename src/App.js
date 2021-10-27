@@ -61,7 +61,7 @@ function App() {
     //if I can do setCurrentQuestion and setNYScore both in the same function call, why can't I also change width of the progress bar?
 
     currentQuestion < questions.length
-      ? setCurrentQuestion(currentQuestion++)
+      ? setCurrentQuestion(currentQuestion + 1)
       : setShowScore(true);
 
     if (city === "NY") {
