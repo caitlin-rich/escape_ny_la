@@ -54,24 +54,19 @@ function App() {
   let [showScore, setShowScore] = useState(false);
   let [nyScore, setNYScore] = useState(0);
   let [laScore, setLAScore] = useState(0);
-  let [width, setWidth] = useState(0)
+  let [width, setWidth] = useState(0);
 
   const handleAnswerClick = (e, city) => {
-
     //if (width <=100) {setWidth(width + (100/questions.length))}
-    //if I can do setCurrentQuestion and setNYScore both in the same function call, why can't I also change width of the progress bar? 
+    //if I can do setCurrentQuestion and setNYScore both in the same function call, why can't I also change width of the progress bar?
 
+    currentQuestion < questions.length
+      ? setCurrentQuestion(currentQuestion++)
+      : setShowScore(true);
 
-    if (currentQuestion <= questions.length)
-      {
-        setCurrentQuestion(currentQuestion++)
-      }
-      else{setShowScore(true)}
-
-      
     if (city === "NY") {
       let newScore = nyScore++;
-      setNYScore(newScore);   
+      setNYScore(newScore);
     }
     if (city === "LA") {
       let newScore = laScore++;
@@ -101,9 +96,15 @@ function App() {
           showScore ? (
             <div>
               <div>
-                {nyScore > laScore
-                  ? <h4>Congrats, you are a survivor! You just escaped from N.Y.!</h4>
-                  : <h4>Congrats, you are a survivor! You just escaped from L.A.!</h4>}
+                {nyScore > laScore ? (
+                  <h4>
+                    Congrats, you are a survivor! You just escaped from N.Y.!
+                  </h4>
+                ) : (
+                  <h4>
+                    Congrats, you are a survivor! You just escaped from L.A.!
+                  </h4>
+                )}
               </div>
               <button onClick={() => handleRestart()}>Restart Quiz</button>
             </div>
