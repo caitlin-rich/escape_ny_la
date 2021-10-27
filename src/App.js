@@ -57,21 +57,24 @@ function App() {
   let [width, setWidth] = useState(0);
 
   const handleAnswerClick = (e, city) => {
-    //if (width <=100) {setWidth(width + (100/questions.length))}
+    
+    if (width <=100) {setWidth(width + (100/questions.length))}
     //if I can do setCurrentQuestion and setNYScore both in the same function call, why can't I also change width of the progress bar?
 
- 
-      setCurrentQuestion(currentQuestion + 1)
-
-
+    console.log('CITY', city)
     if (city === "NY") {
-      let newScore = nyScore++;
+      let newScore = nyScore + 1;
       setNYScore(newScore);
+      setCurrentQuestion(currentQuestion + 1)
     }
     if (city === "LA") {
-      let newScore = laScore++;
+      let newScore = laScore + 1;
       setLAScore(newScore);
+      setCurrentQuestion(currentQuestion + 1)
     }
+    console.log('ny:', nyScore)
+    console.log('la:', laScore)
+
   };
 
   const handleRestart = () => {
@@ -80,6 +83,7 @@ function App() {
     setShowScore(false);
     setNYScore(0);
     setLAScore(0);
+    setWidth(0);
   };
 
   return (
@@ -120,7 +124,7 @@ function App() {
                     {answer.answerOption}
                   </button>
                 ))}
-                {/* <div id="progressbar"><div >{width}%</div></div> */}
+               <div id="progressbar"><div style={{width}}>{width}%</div></div> 
               </div>
             </div>
           )
