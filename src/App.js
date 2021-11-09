@@ -45,6 +45,34 @@ function App() {
         },
       ],
     },
+    {
+      question:
+        "What was strewn across the beach?",
+      answer: [
+        {
+          answerOption: "Mussel shells and sadness",
+          city: "NY",
+        },
+        {
+          answerOption: "Horseshoe crabs and trash",
+          city: "LA",
+        },
+      ],
+    },
+    {
+      question:
+        "Are the people around you kind, or nice?",
+      answer: [
+        {
+          answerOption: "Kind",
+          city: "NY",
+        },
+        {
+          answerOption: 'Nice',
+          city: "LA",
+        },
+      ],
+    },
   ];
 
   let [currentQuestion, setCurrentQuestion] = useState(0);
@@ -56,7 +84,7 @@ function App() {
 
   const handleAnswerClick = (e, city) => {
     if (width <= 100) {
-      setWidth(width + 100 / questions.length);
+      setWidth(Math.round(width + 100 / questions.length));
     }
 
     console.log("CITY", city);
